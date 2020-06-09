@@ -21,7 +21,13 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-
+        if (this.displayCurrentOperand === '') return
+        if (this.displayPreviousOperand !== '') {
+            this.calculate()
+        }
+        this.operation = operation
+        this.displayPreviousOperand = this.displayCurrentOperand
+        this.displayCurrentOperand = ''
     } 
 
     calculate() {
@@ -30,6 +36,7 @@ class Calculator {
 
     updateDisplay() {
         this.displayCurrentOperandText.innerText = this.displayCurrentOperand
+        this.displayPreviousOperandText.innerText = this.displayPreviousOperand
     }
 
 }
@@ -44,9 +51,22 @@ const displayPreviousOperandText = document.querySelector('[display-previous-ope
 const displayCurrentOperandText = document.querySelector('[display-current-operand]')
 
 const calculator = new Calculator(displayPreviousOperandText, displayCurrentOperandText)
+
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.addNumber(button.innerText)
         calculator.updateDisplay()
     })
+})
+
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+allClearButton.addEventListener('click', button => {
+    calculator.clearAll()
+    calculator.updateDisplay()
 })
