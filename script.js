@@ -12,7 +12,7 @@ class Calculator {
     }
 
     delete() {
-
+        this.displayCurrentOperand = this.displayCurrentOperand.toString().slice(0,-1)
     }
 
     addNumber(number) {
@@ -95,5 +95,10 @@ allClearButton.addEventListener('click', button => {
 
 equalsButton.addEventListener('click', button => {
     calculator.calculate()
+    calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', button => {
+    calculator.delete()
     calculator.updateDisplay()
 })
