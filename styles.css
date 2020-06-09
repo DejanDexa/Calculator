@@ -37,7 +37,7 @@ body {
 .calculator-grid > button {
     cursor: pointer;
     font-size: 2rem;
-    border: 1px solid white;
+    border: 1px solid black;
     outline: none;
     background-color: rgba(255, 255, 255 .75);
 }
@@ -62,12 +62,12 @@ body {
     word-break: break-all;
 }
 
-.output .previous-display {
+.output .display-previous {
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
 }
 
-.output .current-display {
+.output .display-current {
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
 }
