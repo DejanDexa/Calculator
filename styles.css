@@ -43,16 +43,34 @@ body {
 }
 
 .calculator-grid > button:hover {
-    background-color: white;
+    background-color: #aacdbe;
 }
 
-.big-btn {
+.allClear {
     grid-column: span 2;
+    background-color: #d92027;
+}
+
+.del {
+    background-color: #ea907a;
+}
+
+.operation {
+    background-color: #ffcd3c;
+}
+
+.equal {
+    grid-column: span 2;
+    background-color: greenyellow;
+}
+
+.dot {
+    background-color: #35d0ba;
 }
 
 .output {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .70);
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
